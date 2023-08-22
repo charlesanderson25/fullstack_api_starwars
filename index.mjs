@@ -12,9 +12,24 @@ app.listen(80, () => {
   console.log(`Server is running on port:${serverPort} `);
 });
 
-app.get("/", async (req, res) => {
-  const retornoAPI = await api.get("/people/1");
-  res.send(retornoAPI.data);
+app.get("/:people/:id", async (req, res) => {
+  const { people, id } = req.params;
+
+  try {
+    const retornoAPI = await api.get(`/${people}/${id}`);
+    const retornoData = `
+    Nome ${data.name}
+    `;
+    res.status(200).send(retornoAPI.data);
+  } catch (error) {
+    res.status(404).send(`
+      <html>
+        <body>
+          <h1>Deu erro, Jovem!</h1>
+        </body>
+      </html>
+    `);
+  }
   //   res.send(`
   //     <html>
   //       <body>
