@@ -1,0 +1,29 @@
+{
+  "name": "fullstack_api_starwars",
+  "version": "1.0.0",
+  "description": "Fullstack - Integração com API do StarWars e Frontend com React",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/charlesanderson25/fullstack_api_starwars.git"
+  },
+  "keywords": [
+    "API",
+    "Node.Js",
+    "Express",
+    "React"
+  ],
+  "author": "Charles Anderson",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/charlesanderson25/fullstack_api_starwars/issues"
+  },
+  "homepage": "https://github.com/charlesanderson25/fullstack_api_starwars#readme",
+  "dependencies": {
+    "axios": "^1.4.0",
+    "express": "^4.18.2"
+  }
+}
