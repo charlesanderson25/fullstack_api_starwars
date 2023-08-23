@@ -6,10 +6,10 @@ import api from "./api.mjs";
 
 const app = express();
 
-const serverPort = 80;
+const PORT = 3000;
 
-app.listen(80, () => {
-  console.log(`Server is running on port:${serverPort} `);
+app.listen(PORT, () => {
+  console.log(`Server is running on port:${PORT} `);
 });
 
 app.get("/:people/:id", async (req, res) => {
@@ -17,9 +17,9 @@ app.get("/:people/:id", async (req, res) => {
 
   try {
     const retornoAPI = await api.get(`/${people}/${id}`);
-    const retornoData = `
-    Nome ${data.name}
-    `;
+    // const retornoData = `
+    // Nome ${data.name}
+    // `;
     res.status(200).send(retornoAPI.data);
   } catch (error) {
     res.status(404).send(`
