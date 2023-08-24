@@ -1,8 +1,7 @@
 import express from "express";
 import axios from "axios";
 import api from "./api.mjs";
-// import req from "express/lib/request";
-// import res from "express/lib/response";
+import client from "./redisDB.mjs";
 
 const app = express();
 
