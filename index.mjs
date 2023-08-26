@@ -7,33 +7,44 @@ const app = express();
 
 const PORT = 3000;
 
+app.use(express.json());
+
 app.listen(PORT, () => {
   console.log(`Server is running on port:${PORT} `);
 });
 
-app.get("/:people/:id", async (req, res) => {
+app.get("/people/:id", async (req, res) => {
   const { people, id } = req.params;
 
   try {
     const retornoAPI = await api.get(`/${people}/${id}`);
-    // const retornoData = `
-    // Nome ${data.name}
-    // `;
     res.status(200).send(retornoAPI.data);
   } catch (error) {
     res.status(404).send(`
+        <html>
+          <body>
+            <h1>Deu erro, Jovem!</h1>
+          </body>
+        </html>
+      `);
+  }
+  res.status(404).send(`
       <html>
         <body>
-          <h1>Deu erro, Jovem!</h1>
+          <h1>Rota não encontrada</h1>
         </body>
       </html>
     `);
+});
+
+app.get("/people/search/:searchPeople", async (req, res) => {
+  const searchPeople = req.params.searchPeople;
+  console.log(searchPeople);
+  try {
+    const testSearch = `/people?search=${searchPeople}`;
+    const response = await api.get(testSearch);
+    res.status(200).send(response.data);
+  } catch (error) {
+    res.status(500).send("Erro na busca dos dados!");
   }
-  //   res.send(`
-  //     <html>
-  //       <body>
-  //         <h1>Você acessou o projeto!</h1>
-  //       </body>
-  //     </html>
-  //   `);
 });
