@@ -16,6 +16,7 @@ app.listen(PORT, () => {
   console.log(`Server is running on port:${PORT} `);
 });
 
+//Rota de integração
 app.get("/people/:id", async (req, res) => {
   const { people, id } = req.params;
 
@@ -40,6 +41,7 @@ app.get("/people/:id", async (req, res) => {
     `);
 });
 
+//Rota de pesquisa do personagem
 app.get("/people/search/:searchPeople", async (req, res) => {
   const searchPeople = req.params.searchPeople;
   console.log(searchPeople);
@@ -50,4 +52,33 @@ app.get("/people/search/:searchPeople", async (req, res) => {
   } catch (error) {
     res.status(500).send("Erro na busca dos dados!");
   }
+});
+
+//Rota para adicionar ou remover favorito
+app.post("/people/favorites/:id", (req, res) => {
+  const personagemId = req.params.id;
+
+  client.sIsMember("favorites", personagemId, (err, reply) => {
+    if (err) {
+      res.status(500).send("Erro ao verificar favorito");
+    } else {
+      if (reply === 1) {
+        client.sRem("favorites", personagemId, (err) => {
+          if (err) {
+            res.status(500).send("Erro ao remover personagem como favorito");
+          } else {
+            res.status(200).send("Personagem removido dos favoritos");
+          }
+        });
+      } else {
+        client.sAdd("favorites", personagemId, (err) => {
+          if (err) {
+            res.status(500).send("Erro ao adicionar favorito");
+          } else {
+            res.status(200).send("Favorito adicionado com sucesso!");
+          }
+        });
+      }
+    }
+  });
 });
