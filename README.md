@@ -2,7 +2,7 @@
 
 ![20230407-fthqiyswaaeu6tn-555x555](https://github.com/charlesanderson25/fullstack_api_starwars/assets/54293151/942591ad-4868-437a-95f3-a77bda7ec752)
 
-Criação de uma API REST para integração com a API StarWars com uma tela de interface.
+Criação de uma API REST para integração com a API do StarWars, com uma tela de interface.
 
 O sitema utiliza o Redis como um In Memory Database. Esse banco de dados não tem suporte para Windows, caso o usuário utilize apenas esse sistema operacional, é necessário baixar o WSL: https://redis.io/docs/getting-started/installation/install-redis-on-windows/
 
