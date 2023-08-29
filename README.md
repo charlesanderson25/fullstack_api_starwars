@@ -1,6 +1,8 @@
 <h1 align="center"> Pesquise seu personagem - Star Wars </h1>
 
-![20230407-fthqiyswaaeu6tn-555x555](https://github.com/charlesanderson25/fullstack_api_starwars/assets/54293151/942591ad-4868-437a-95f3-a77bda7ec752)
+<p align="center">
+  <img src="https://github.com/charlesanderson25/fullstack_api_starwars/assets/54293151/942591ad-4868-437a-95f3-a77bda7ec752" alt="Imagem">
+</p>
 
 Criação de uma API REST para integração com a API do StarWars, com uma tela de interface.
 
