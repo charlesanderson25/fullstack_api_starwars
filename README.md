@@ -37,7 +37,7 @@ Instalação dos módulos, dependências e bibliotecas utilizadas no projeto, co
 <br><strong>npm install axios</strong></br> 
 <br><strong>npm install cors</strong></br> 
 <br><strong>npm install express</strong></br> 
-<br><strong>npm install nodemon</strong></br>
+<br><strong>npm install --save-dev nodemon</strong></br>
 
 Instalar e fazer a conexão do Redis conforme instruções em sua documentação: https://redis.io/docs/getting-started/installation/install-redis-on-windows/
 
