@@ -1,5 +1,4 @@
 import express from "express";
-import axios from "axios";
 import api from "./api.mjs";
 import client from "../redisDB.mjs";
 import cors from "cors";
