@@ -25,13 +25,6 @@ app.get("/people/:id", async (req, res) => {
   } catch (error) {
     res.status(404).json({ error: "Recurso não encontrado!" });
   }
-  res.status(404).send(`
-      <html>
-        <body>
-          <h1>Rota não encontrada</h1>
-        </body>
-      </html>
-    `);
 });
 
 //Rota de pesquisa do personagem
