@@ -1,5 +1,5 @@
 import express from "express";
-import api from "./api.mjs";
+import api from "./service/api.mjs";
 import client from "../redisDB.mjs";
 import cors from "cors";
 
