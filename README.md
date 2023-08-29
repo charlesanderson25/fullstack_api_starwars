@@ -54,4 +54,4 @@ Após instalar todas as dependências, você poderá rodar o servidor e inicar o
 
 # Autores
  
-[<img loading="lazy" src="https://avatars.githubusercontent.com/u/54293151?v=4" width=115><br><sub> 
+<img loading="lazy" src="https://avatars.githubusercontent.com/u/54293151?v=4" width=115><br><sub> 
