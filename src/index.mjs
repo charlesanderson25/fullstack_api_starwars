@@ -23,13 +23,7 @@ app.get("/people/:id", async (req, res) => {
     const retornoAPI = await api.get(`/${people}/${id}`);
     res.status(200).send(retornoAPI.data);
   } catch (error) {
-    res.status(404).send(`
-        <html>
-          <body>
-            <h1>Deu erro, Jovem!</h1>
-          </body>
-        </html>
-      `);
+    res.status(404).json({ error: "Recurso não encontrado!" });
   }
   res.status(404).send(`
       <html>
